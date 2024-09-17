@@ -25,7 +25,7 @@ on:
 jobs:
   call-generate-task:
     name: Call Generate Task Reusable Workflow
-    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.0  # Replace with your GitHub username and correct tag
+    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.0  # Corrected repository and tag
     with:
       theme: ${{ inputs.theme }}
       difficulty: ${{ inputs.difficulty }}
