@@ -25,11 +25,11 @@ on:
 jobs:
   call-generate-task:
     name: Call Generate Task Reusable Workflow
-    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.0  # Ensure this tag exists
+    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.0  # Ensure this tag points to the updated commit
     with:
       theme: ${{ inputs.theme }}
       difficulty: ${{ inputs.difficulty }}
       language: ${{ inputs.language }}
     secrets:
       OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
-      # GITHUB_TOKEN is automatically available; no need to pass it
+      # Removed GITHUB_TOKEN to avoid collision with reserved name
