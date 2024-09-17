@@ -1,0 +1,35 @@
+# avid-task3/.github/workflows/use_generate_task.yml
+
+name: Use Generate Task Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: 'Theme for the new task'
+        required: true
+        type: string
+        default: 'Create a simple game application that includes the following functionalities: player movement, scoring system, and enemy interactions.'
+      difficulty:
+        description: 'Difficulty level for the new task'
+        required: true
+        type: string
+        default: 'medium'
+        # Expected values: basic, medium, hard
+      language:
+        description: 'Natural language for the task description'
+        required: true
+        type: string
+        default: 'English'
+
+jobs:
+  call-generate-task:
+    name: Call Generate Task Reusable Workflow
+    uses: HotFazz/task3/.github/workflows/generate_task.yml@v1.0.0  # Replace with your GitHub username and correct tag
+    with:
+      theme: ${{ inputs.theme }}
+      difficulty: ${{ inputs.difficulty }}
+      language: ${{ inputs.language }}
+    secrets:
+      OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
