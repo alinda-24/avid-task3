@@ -9,7 +9,7 @@ on:
         description: 'Theme for the new task'
         required: true
         type: string
-        default: 'Create a simple game application that includes the following functionalities: player movement, scoring system, and enemy interactions.'
+        default: 'Sample theme'
       difficulty:
         description: 'Difficulty level for the new task'
         required: true
@@ -25,7 +25,7 @@ on:
 jobs:
   call-generate-task:
     name: Call Generate Task Reusable Workflow
-    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.0  # Ensure this tag points to the updated commit
+    uses: alinda-24/task3/.github/workflows/generate_task.yml@v1.0.1  # Updated tag pointing to minimal workflow
     with:
       theme: ${{ inputs.theme }}
       difficulty: ${{ inputs.difficulty }}
